@@ -1,0 +1,19 @@
+---
+title: "Why I Built This Site"
+date: "2026-02-02"
+excerpt: "A short note on the stack behind this site and why it's built this way."
+tags: ["Next.js", "Meta"]
+---
+
+This site is built with [Next.js](https://nextjs.org/) (App Router), TypeScript, and Tailwind CSS, and deployed on [Vercel](https://vercel.com/).
+
+## Stack
+
+- **Framework**: Next.js — file-based routing, Server Components, static generation.
+- **Styling**: Tailwind CSS for utility-first styling.
+- **Content**: Blog posts are local MDX files, no external CMS required.
+- **Contact form**: A serverless API route that sends email via [Resend](https://resend.com/).
+
+## Customizing
+
+All of the placeholder content — bio, experience, projects, skills, education — lives in the `content/` directory as plain TypeScript objects, so it's easy to edit without touching any component code.
