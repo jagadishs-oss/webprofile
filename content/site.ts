@@ -17,16 +17,16 @@ export interface SiteConfig {
 
 // Edit this file with your own details — it's the single source of truth for the whole site.
 export const siteConfig: SiteConfig = {
-  name: "Your Name",
-  role: "Software Engineer",
-  tagline: "Building Thoughtful Software.",
-  bio: "I design and build reliable, user-focused products across the stack — replace this bio in content/site.ts with a couple of sentences about what you do and what you care about.",
-  email: "you@example.com",
-  location: "City, Country",
+  name: "Jagadish Songapa Gounder",
+  role: "Agent Systems Expert | LLM Orchestration Architect | Agent Engineering Systems",
+  tagline: "Building intelligent agent systems with cloud and on-prem solutions",
+  bio: "Expert in agent systems, building LLM orchestration and architecting agent engineering systems with cloud and on-prem solutions. Passionate about creating intelligent, scalable agent-based architectures.",
+  email: "jagadish.gounder@example.com",
+  location: "Chennai, India",
   resumeUrl: "/resume.pdf",
   social: [
-    { label: "LinkedIn", url: "https://linkedin.com/in/yourprofile", icon: "linkedin" },
-    { label: "GitHub", url: "https://github.com/yourusername", icon: "github" },
-    { label: "Email", url: "mailto:you@example.com", icon: "mail" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/jagadishsongapagounder/", icon: "linkedin" },
+    { label: "GitHub", url: "https://github.com/jagadishs-oss", icon: "github" },
+    { label: "Email", url: "mailto:jagadish.gounder@example.com", icon: "mail" },
   ],
 };
