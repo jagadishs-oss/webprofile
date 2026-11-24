@@ -45,7 +45,7 @@ html {
 }
 
 .hero-background {
-  background: radial-gradient(ellipse at 88% 40%, #244039 0%, transparent 54%);
+  background: radial-gradient(ellipse at 22% 45%, #1b3b31 0%, transparent 62%);
 }
 
 .portfolio-heading {
@@ -56,7 +56,8 @@ html {
 }
 
 .portrait-frame {
-  box-shadow: 0 20px 55px #07100f55;
+  background: #132b24;
+  box-shadow: 0 28px 70px #07100f80;
 }
 
 .portfolio-button {
