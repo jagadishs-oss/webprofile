@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin } from "lucide-react";
-import portrait from "@/public/jagadish-portrait.jpg";
+import portrait from "@/public/jagadish-cutout.webp";
 import { siteConfig } from "@/content/site";
 
 export function Hero() {
@@ -24,15 +24,13 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="portrait-frame mx-auto w-full max-w-[30rem] overflow-hidden rounded-3xl md:col-start-1 md:row-start-1">
-          <Image
-            src={portrait}
-            alt={siteConfig.name}
-            sizes="(min-width: 1200px) 480px, (min-width: 768px) 42vw, min(100vw - 3rem, 480px)"
-            preload
-            className="aspect-square h-auto w-full object-cover"
-          />
-        </div>
+        <Image
+          src={portrait}
+          alt={siteConfig.name}
+          sizes="(min-width: 1200px) 480px, (min-width: 768px) 42vw, min(100vw - 3rem, 480px)"
+          preload
+          className="hero-portrait mx-auto h-auto w-full max-w-[30rem] md:col-start-1 md:row-start-1"
+        />
       </div>
     </section>
   );

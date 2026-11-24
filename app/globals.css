@@ -55,9 +55,8 @@ html {
   line-height: 1.12;
 }
 
-.portrait-frame {
-  background: #132b24;
-  box-shadow: 0 28px 70px #07100f80;
+.hero-portrait {
+  mask-image: linear-gradient(to bottom, #000 92%, transparent);
 }
 
 .portfolio-button {
