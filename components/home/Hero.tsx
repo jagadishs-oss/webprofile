@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin } from "lucide-react";
-import portrait from "@/public/jagadish.jpg";
+import portrait from "@/public/jagadish-portrait.jpg";
 import { siteConfig } from "@/content/site";
 
 export function Hero() {
