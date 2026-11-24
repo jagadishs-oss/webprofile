@@ -2,13 +2,13 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #09090b;
-  --foreground: #f4f4f5;
-  --surface: #131316;
-  --muted: #a1a1aa;
-  --border: rgba(255, 255, 255, 0.1);
-  --accent: #6366f1;
-  --accent-foreground: #eef2ff;
+  --background: #101b1b;
+  --foreground: #f4f4e9;
+  --surface: #172525;
+  --muted: #b2c3bd;
+  --border: #344744;
+  --accent: #a7e3ca;
+  --accent-foreground: #132a23;
 }
 
 @theme inline {
@@ -36,4 +36,65 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+
+.site-width {
+  width: min(100% - 3rem, 70rem);
+  margin-inline: auto;
+}
+
+.hero-background {
+  background: radial-gradient(ellipse at 88% 40%, #244039 0%, transparent 54%);
+}
+
+.portfolio-heading {
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+}
+
+.portrait-frame {
+  box-shadow: 0 20px 55px #07100f55;
+}
+
+.portfolio-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  padding-inline: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.portfolio-button:hover {
+  border-color: var(--accent);
+}
+
+.portfolio-button-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.portfolio-button-primary:hover {
+  background: #c7f3e2;
+}
+
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

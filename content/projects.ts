@@ -1,30 +1,14 @@
-export interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-}
-
-// Edit with your own projects.
-export const projects: Project[] = [
+export const lifecycle = [
   {
-    title: "Project One",
-    description: "One or two sentences describing what this project does and why it's interesting.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/yourusername/project-one",
-    liveUrl: "https://example.com",
+    title: "Design",
+    description: "Start with a business workflow. Define what the agent should handle, where it needs a human, and what a successful run looks like.",
   },
   {
-    title: "Project Two",
-    description: "One or two sentences describing what this project does and why it's interesting.",
-    tags: ["Node.js", "PostgreSQL"],
-    githubUrl: "https://github.com/yourusername/project-two",
+    title: "Evaluate & release",
+    description: "Test representative tasks and edge cases. Use failures to refine the agent and rerun the same checks before release.",
   },
   {
-    title: "Project Three",
-    description: "One or two sentences describing what this project does and why it's interesting.",
-    tags: ["Python", "FastAPI"],
-    liveUrl: "https://example.com",
+    title: "Operate & improve",
+    description: "Monitor behavior after deployment. Use traces and structured logs to investigate failures and turn them into regression cases.",
   },
 ];

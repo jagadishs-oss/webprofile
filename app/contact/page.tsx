@@ -8,17 +8,18 @@ export const metadata = {
 };
 
 export default function ContactPage() {
+  const formEnabled = Boolean(process.env.RESEND_API_KEY && process.env.CONTACT_TO_EMAIL);
+
   return (
     <section className="px-6 py-20">
       <SectionHeading
         eyebrow="Contact"
         title="Get in Touch"
-        description="Have a project in mind or just want to say hi? I'd love to hear from you."
+        description="Connect with me about enterprise AI agents, agent lifecycle management, or open source."
       />
 
-      <div className="mx-auto mt-16 grid max-w-4xl gap-10 sm:grid-cols-2">
-        <div>
-          <h3 className="font-semibold">Let&apos;s Connect</h3>
+      <div className={`mx-auto mt-10 grid gap-10 ${formEnabled ? "max-w-4xl sm:grid-cols-2" : "max-w-lg"}`}>
+        <div className="min-w-0">
           <div className="mt-4 space-y-3">
             {siteConfig.social.map((link) => {
               const Icon = SOCIAL_ICONS[link.icon];
@@ -34,9 +35,9 @@ export default function ContactPage() {
                   className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 transition-colors hover:border-accent"
                 >
                   <Icon className="size-5 text-accent" />
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-sm font-medium">{link.label}</p>
-                    <p className="text-sm text-muted">{displayValue}</p>
+                    <p className="break-all text-sm text-muted">{displayValue}</p>
                   </div>
                 </a>
               );
@@ -44,7 +45,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <ContactForm />
+        {formEnabled && <ContactForm />}
       </div>
     </section>
   );

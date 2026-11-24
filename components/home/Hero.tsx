@@ -1,48 +1,35 @@
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { MapPin } from "lucide-react";
+import portrait from "@/public/jagadish.jpg";
 import { siteConfig } from "@/content/site";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pt-24 pb-20 sm:pt-32 sm:pb-28">
-      <div className="pointer-events-none absolute inset-0 -z-10 flex justify-center">
-        <div className="h-[420px] w-[420px] rounded-full bg-accent/20 blur-[120px]" />
-      </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mx-auto max-w-3xl text-center"
-      >
-        <p className="text-sm font-medium tracking-widest text-accent uppercase">
-          {siteConfig.role}
-        </p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-6xl">
-          {siteConfig.tagline}
-        </h1>
-        <p className="mx-auto mt-6 max-w-xl text-lg text-muted">{siteConfig.bio}</p>
-
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
-          >
-            View My Work
-            <ArrowRight className="size-4" />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-          >
-            <Mail className="size-4" />
-            Get in Touch
-          </Link>
+    <section className="hero-background border-b border-border" aria-labelledby="hero-title">
+      <div className="site-width grid items-center gap-10 pt-12 pb-14 sm:pt-20 sm:pb-20 md:grid-cols-[1.5fr_1fr] md:gap-12 lg:gap-24">
+        <div>
+          <p className="mb-5 text-sm font-medium tracking-[0.15em] text-accent uppercase">
+            {siteConfig.name}
+          </p>
+          <h1 id="hero-title" className="max-w-2xl text-[clamp(2.75rem,5.7vw,5.15rem)] leading-[0.99] font-semibold tracking-[-0.065em]">
+            Enterprise AI agents, <span className="text-accent">from design to operations.</span>
+          </h1>
+          <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">{siteConfig.bio}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/#projects" className="portfolio-button portfolio-button-primary">Explore my work</Link>
+            <Link href="/contact" className="portfolio-button">Get in touch</Link>
+          </div>
         </div>
-      </motion.div>
+
+        <figure className="portrait-frame w-full max-w-80 overflow-hidden rounded-2xl border border-border md:justify-self-end">
+          <Image src={portrait} alt={siteConfig.name} sizes="(max-width: 360px) 100vw, 320px" preload className="aspect-square h-auto w-full object-cover" />
+          <figcaption className="flex items-center gap-2.5 border-t border-border bg-surface px-4 py-3.5 text-sm text-muted">
+            <MapPin className="size-4 text-accent" aria-hidden="true" />
+            {siteConfig.location}
+          </figcaption>
+        </figure>
+      </div>
     </section>
   );
 }

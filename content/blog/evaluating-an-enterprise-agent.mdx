@@ -1,0 +1,22 @@
+---
+title: "How I evaluate an enterprise agent before release"
+date: "2026-11-24"
+excerpt: "A practical workflow for defining expected behavior, testing failure cases, and deciding whether an agent is ready to release."
+tags: ["Agent Lifecycle Management", "Evaluation"]
+---
+
+Start with the workflow the agent has to perform and write down what a successful run looks like. A response can sound plausible while missing the information the user needs or crossing a boundary the workflow depends on.
+
+## Define the expected behavior
+
+Take a hypothetical service intake agent. It needs to gather the request, identify missing fields, and prepare a handoff. When the request is ambiguous, it should ask for clarification. It should route out-of-scope requests to a human.
+
+## Build a small evaluation set
+
+Include a complete request, an incomplete one, an ambiguous one, and one the agent should hand off. For each case, capture the expected outcome and any constraints that affect the decision. Score the task result and the handoff decision separately so a convincing answer cannot hide an incorrect action.
+
+## Use failure cases to guide release
+
+Review failed runs alongside their traces. Identify where the agent took the wrong path and add the case to the regression set. Rerun the same cases after a change and block release if a critical boundary still fails.
+
+After deployment, bring real failure patterns back into the evaluation set. This makes monitoring part of release preparation for the next version.

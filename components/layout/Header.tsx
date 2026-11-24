@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Download, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/content/site";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Blog", href: "/blog" },
+  { label: "Work", href: "/#projects" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Writing", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -19,8 +19,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="font-semibold tracking-tight">
+      <div className="site-width flex h-16 items-center justify-between gap-4">
+        <Link href="/" className="flex items-center gap-3 text-sm font-semibold tracking-tight sm:text-base">
+          <span className="flex size-8 shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/10 font-mono text-xs text-accent" aria-hidden="true">JS</span>
           {siteConfig.name}
         </Link>
 
@@ -39,15 +40,6 @@ export function Header() {
             </Link>
           ))}
         </nav>
-
-        <Link
-          href={siteConfig.resumeUrl}
-          download
-          className="hidden items-center gap-2 rounded-full border border-border px-4 py-2 text-sm transition-colors hover:border-accent hover:text-accent sm:inline-flex"
-        >
-          <Download className="size-4" />
-          Resume
-        </Link>
 
         <button
           type="button"
@@ -72,15 +64,6 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href={siteConfig.resumeUrl}
-            download
-            onClick={() => setIsMenuOpen(false)}
-            className="mt-2 inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm text-muted transition-colors hover:bg-surface hover:text-foreground"
-          >
-            <Download className="size-4" />
-            Resume
-          </Link>
         </nav>
       )}
     </header>

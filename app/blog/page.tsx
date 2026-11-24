@@ -22,7 +22,7 @@ export default function BlogPage() {
       <SectionHeading
         eyebrow="Writing"
         title="Blog"
-        description="Thoughts on software, and everything in between."
+        description="Notes on designing, evaluating, and operating enterprise AI agents."
       />
 
       <div className="mx-auto mt-16 max-w-3xl space-y-6">

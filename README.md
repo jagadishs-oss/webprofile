@@ -1,6 +1,6 @@
 # webprofile
 
-A personal portfolio site built with Next.js (App Router), TypeScript, and Tailwind CSS. Includes a home page (hero, experience, projects, skills, education), a local MDX blog, and a contact form backed by a serverless API route + [Resend](https://resend.com/).
+Jagadish Songapa Gounder’s portfolio on AI transformation, enterprise AI agents, and agent lifecycle management. Built with Next.js, TypeScript, and Tailwind CSS, with an MDX blog and an optional [Resend](https://resend.com/)-backed contact form.
 
 ## Getting started
 
@@ -15,22 +15,16 @@ Open [http://localhost:3000](http://localhost:3000).
 
 All editable content lives in `content/` as plain TypeScript objects — no component code needs to change:
 
-- `content/site.ts` — name, role, tagline, bio, email, social links, resume URL
+- `content/site.ts` — name, role, bio, location, and social links
 - `content/experience.ts` — work history
-- `content/projects.ts` — projects grid
+- `content/projects.ts` — agent lifecycle stages
 - `content/skills.ts` — skills, grouped by category
 - `content/education.ts` — education history
 - `content/blog/*.mdx` — blog posts (frontmatter: `title`, `date`, `excerpt`, `tags`)
 
-## Before you deploy
-
-1. Replace the placeholder values in `content/site.ts` and the other `content/*.ts` files.
-2. Add your resume as `public/resume.pdf` (the header's "Resume" button links directly to this file).
-3. Set up the contact form (see below).
-
 ## Contact form setup
 
-The form at `/contact` posts to `app/api/contact/route.ts`, which sends email via Resend. Copy `.env.example` to `.env.local` and fill in:
+With both required variables configured, the form at `/contact` posts to `app/api/contact/route.ts`, which sends email via Resend. The page shows social links when either required variable is missing. To enable the form locally, copy `.env.example` to `.env.local` and fill in:
 
 - `RESEND_API_KEY` — from [resend.com/api-keys](https://resend.com/api-keys)
 - `CONTACT_TO_EMAIL` — the inbox you want messages delivered to

@@ -1,20 +1,14 @@
-export interface SkillCategory {
-  category: string;
-  items: string[];
-}
-
-// Edit with your own skills, grouped however makes sense to you.
-export const skills: SkillCategory[] = [
+export const skills = [
   {
-    category: "Languages",
-    items: ["TypeScript", "JavaScript", "Python", "Go"],
+    category: "AI Transformation",
+    items: ["Use-case selection", "Business process automation", "Workflow design"],
   },
   {
-    category: "Frameworks & Libraries",
-    items: ["Next.js", "React", "Node.js", "Tailwind CSS"],
+    category: "Enterprise AI Agents",
+    items: ["Agent design", "Agent orchestration", "Python"],
   },
   {
-    category: "Tools & Platforms",
-    items: ["Docker", "PostgreSQL", "Git", "Vercel"],
+    category: "Agent Lifecycle Management",
+    items: ["Evaluation", "Release verification", "Observability", "MLOps"],
   },
 ];

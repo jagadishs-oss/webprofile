@@ -1,64 +1,29 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-import { GithubIcon } from "@/components/icons/BrandIcons";
-import { projects } from "@/content/projects";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ClipboardCheck, GitBranch, Radio } from "lucide-react";
+import { lifecycle } from "@/content/projects";
+
+const icons = [GitBranch, ClipboardCheck, Radio];
 
 export function Projects() {
   return (
-    <section id="projects" className="px-6 py-20">
-      <SectionHeading eyebrow="Work" title="Projects" description="A selection of things I've built." />
-
-      <div className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-2">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.title}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5, delay: index * 0.05 }}
-            className="flex flex-col rounded-2xl border border-border bg-surface p-6"
-          >
-            <h3 className="text-lg font-semibold">{project.title}</h3>
-            <p className="mt-2 flex-1 text-muted">{project.description}</p>
-
-            <div className="mt-4 flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span key={tag} className="rounded-full border border-border px-3 py-1 text-xs text-muted">
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-5 flex gap-4 text-sm">
-              {project.githubUrl && (
-                <Link
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-foreground"
-                >
-                  <GithubIcon className="size-4" />
-                  Code
-                </Link>
-              )}
-              {project.liveUrl && (
-                <Link
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-foreground"
-                >
-                  <ExternalLink className="size-4" />
-                  Live
-                </Link>
-              )}
-            </div>
-          </motion.div>
-        ))}
+    <section id="projects" className="border-b border-border py-12 sm:py-16" aria-labelledby="work-title">
+      <div className="site-width">
+        <div className="flex flex-wrap items-baseline justify-between gap-3">
+          <h2 id="work-title" className="portfolio-heading">Managing the agent lifecycle</h2>
+          <Link href="/blog/evaluating-an-enterprise-agent" className="text-sm font-medium text-accent hover:underline">Read the evaluation guide</Link>
+        </div>
+        <ol className="mt-7 grid overflow-hidden rounded-2xl border border-border bg-surface sm:grid-cols-3 sm:divide-x sm:divide-border">
+          {lifecycle.map((stage, index) => {
+            const Icon = icons[index];
+            return (
+              <li key={stage.title} className="border-b border-border px-5 py-6 last:border-b-0 sm:border-b-0 lg:px-7 lg:py-7">
+                <Icon className="size-5 text-accent" aria-hidden="true" />
+                <h3 className="mt-4 text-lg font-semibold">{stage.title}</h3>
+                <p className="mt-2 text-base leading-relaxed text-muted">{stage.description}</p>
+              </li>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );
