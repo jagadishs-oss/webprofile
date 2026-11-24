@@ -24,7 +24,7 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="portrait-frame mx-auto w-full max-w-[30rem] overflow-hidden rounded-3xl border border-accent/15 md:col-start-1 md:row-start-1">
+        <div className="portrait-frame mx-auto w-full max-w-[30rem] overflow-hidden rounded-3xl md:col-start-1 md:row-start-1">
           <Image
             src={portrait}
             alt={siteConfig.name}
