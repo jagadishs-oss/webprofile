@@ -12,3 +12,22 @@ export const lifecycle = [
     description: "Monitor behavior after deployment. Use traces and structured logs to investigate failures and turn them into regression cases.",
   },
 ];
+
+export const aiSecurity = [
+  {
+    title: "Protect AI-powered apps",
+    description: "Identify where AI applications handle sensitive data or trigger actions, and put safeguards around those workflows.",
+  },
+  {
+    title: "Build AI securely",
+    description: "Plan for security during design, test how safeguards behave, and review changes before release.",
+  },
+  {
+    title: "Govern AI agents",
+    description: "Define what agents can access, which actions need human approval, and how activity is reviewed.",
+  },
+  {
+    title: "Secure workforce AI use",
+    description: "Help teams use approved AI tools and handle sensitive information safely in everyday work.",
+  },
+];

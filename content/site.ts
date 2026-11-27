@@ -6,8 +6,8 @@ export interface SocialLink {
 
 export const siteConfig = {
   name: "Jagadish Songapa Gounder",
-  role: "AI Transformation · Enterprise AI Agents · Agent Lifecycle Management",
-  bio: "I lead AI transformation initiatives that turn business workflows into enterprise AI agents. I design how they work, evaluate them before release, and use monitoring and traces to improve them in production.",
+  role: "AI Transformation · Enterprise AI Agents · AI Security",
+  bio: "I lead AI transformation initiatives, build enterprise agents from design through production, and work on securing AI applications, governing agents, and helping teams use AI safely.",
   location: "Bengaluru, India",
   social: [
     { label: "LinkedIn", url: "https://www.linkedin.com/in/jagadishsongapagounder/", icon: "linkedin" },

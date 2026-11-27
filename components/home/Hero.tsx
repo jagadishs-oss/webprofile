@@ -11,7 +11,7 @@ export function Hero() {
         <div className="md:col-start-2 md:row-start-1">
           <p className="mb-5 text-sm font-semibold tracking-[0.14em] text-muted uppercase">{siteConfig.name}</p>
           <h1 id="hero-title" className="text-[clamp(2.55rem,5.35vw,4.85rem)] leading-[1.01] font-semibold tracking-[-0.062em]">
-            Enterprise AI agents, <span className="block text-accent">from design to operations.</span>
+            Building agents. <span className="block text-accent">Securing AI.</span>
           </h1>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-muted sm:text-lg">{siteConfig.bio}</p>
           <div className="mt-7 flex flex-wrap gap-3">

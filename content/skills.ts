@@ -1,14 +1,10 @@
 export const skills = [
   {
-    category: "AI Transformation",
-    items: ["Use-case selection", "Business process automation", "Workflow design"],
+    category: "Agent Building",
+    items: ["Workflow design", "Agent design", "Agent orchestration", "Python", "Evaluation", "Observability", "MLOps"],
   },
   {
-    category: "Enterprise AI Agents",
-    items: ["Agent design", "Agent orchestration", "Python"],
-  },
-  {
-    category: "Agent Lifecycle Management",
-    items: ["Evaluation", "Release verification", "Observability", "MLOps"],
+    category: "AI Security",
+    items: ["AI application security", "Secure AI development", "Agent governance", "Workforce AI security"],
   },
 ];

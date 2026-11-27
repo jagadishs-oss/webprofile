@@ -5,7 +5,7 @@ export function Skills() {
     <section id="skills" className="border-y border-border bg-surface py-12 sm:py-16" aria-labelledby="skills-title">
       <div className="site-width">
         <h2 id="skills-title" className="portfolio-heading">Skills</h2>
-        <div className="mt-7 grid gap-x-8 gap-y-7 md:grid-cols-3">
+        <div className="mt-7 grid gap-x-8 gap-y-7 md:grid-cols-2">
           {skills.map((group) => (
             <div key={group.category}>
               <h3 className="text-base font-semibold">{group.category}</h3>
